@@ -181,6 +181,30 @@ heiferApp.controller('registrationController', function($scope) {
                         {title: "This is a test", content: "lorem ipsum", location: "Africa", author: "Todd Kronenburg", type: 2},
             {img: "img/llama.jpg", title: "LLama Project Transforms Lives in Bolivia", content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In mi neque, malesuada eget dolor vitae, fermentum varius ante. Ut vehicula libero mattis faucibus pulvinar. Nam ultrices varius magna vitae sodales. Proin eget vulputate metus, ac ullamcorper nibh. Quisque nec purus ac erat imperdiet viverra quis eu risus. Suspendisse efficitur cursus eros a vulputate. Cras eu hendrerit mi. Aliquam viverra, neque vitae volutpat vehicula, erat risus rhoncus nulla, ut suscipit sapien elit et massa.", location: "New Zealand", author: "John Doe", type: 4},
             {title: "Elizabeth's Textile Business in Peru", content: "http://www.youtube.com/embed/GohqIUxgRx0?list=PLDpCJPATo8NQeYbxadqpf6cAArGgcBJSO", location: "Africa", author: "Todd Kronenburg", type: 3},
+        $scope.datas = [];
+        var Posts = Parse.Object.extend("Posts");
+        var query = new Parse.Query(Posts);
+        query.find({
+            success: function(results) {
+                console.log(results);
+                $scope.datas.push(results.map(function(e,i) {
+                    return { title: e.attributes.Title, content: e.attributes.Content };
+                }));
+                console.log($scope.datas);
+                $scope.innerData = $scope.datas[0];
+                console.log("title: " + $scope.datas[0][0].content);
+            },
+            error: function(error) {
+                console.log("error: " + error.code + " " + error.message);
+            }
+        });
 
-            ];
+
+            // $scope.datas = [ 
+            // {title: "This is a test", content: "lorem ipsum", location: "Africa", author: "Todd Kronenburg", type: 2},
+            // {title: "This is a test 2", content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In mi neque, malesuada eget dolor vitae, fermentum varius ante. Ut vehicula libero mattis faucibus pulvinar. Nam ultrices varius magna vitae sodales. Proin eget vulputate metus, ac ullamcorper nibh. Quisque nec purus ac erat imperdiet viverra quis eu risus. Suspendisse efficitur cursus eros a vulputate. Cras eu hendrerit mi. Aliquam viverra, neque vitae volutpat vehicula, erat risus rhoncus nulla, ut suscipit sapien elit et massa.", location: "USA", author: "Ryan Janvier", type: 1},
+            // {title: "Elizabeth's Textile Business in Peru", content: "<iframe width='560' height='315' src='//www.youtube.com/embed/GohqIUxgRx0?list=PLDpCJPATo8NQeYbxadqpf6cAArGgcBJSO' frameborder='0' allowfullscreen></iframe>", location: "Africa", author: "Todd Kronenburg", type: 1},
+
+
+            // ];
           });
