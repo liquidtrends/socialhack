@@ -1,0 +1,43 @@
+<!-- Fixed navbar -->
+    <nav class="navbar navbar-default navbar-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#"><img class="wordmark" src="img/wordmark.png"></a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="../navbar/"><i class="fa fa-user"></i> Profile</a></li>
+            <li><a href="../navbar-static-top/"><i class="fa fa-bookmark"></i> Library</a></li>
+            <li><a href="../navbar-static-top/"><i class="fa fa-power-off"></i> Logout</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+<div class="col-md-3 well hidden-xs hidden-sm">
+   search
+</div>
+
+<div class="col-md-9">
+   <i class="fa fa-plus-square"></i> <a href ng-click="addNew = !addNew">Add New</a>
+   <!-- Add New -->
+   <div ng-show="addNew" class="well">
+      <i class="fa fa-file-image-o add-icon"></i>
+      <i class="fa fa-youtube add-icon"></i>
+      <i class="fa fa-file-text-o add-icon"></i>
+   </div>
+   <!-- Add New -->
+   <div ng-app ng-controller="feedController">
+    <ul class="list-unstyled">
+        <li class="item" ng-repeat="(country,goals) in items">
+        <h2>{{country}}</h2> <p>{{goals}}</p>
+        <i class="fa fa-bookmark pull-right"></i></li>
+    </ul>
+   </div>
+</div>

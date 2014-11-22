@@ -17,40 +17,6 @@ heiferApp.config(function($routeProvider) {
   })
 });
 
-// create the controller and inject Angular's $scope
-heiferApp.controller('mainController', function($scope) {
-  // create a message to display in our view
-  $scope.message = 'Everyone come and see how good I look!';
-});
-
-heiferApp.controller('aboutController', function($scope) {
-  $scope.message = 'Look! I am an about page.';
-});
-
-heiferApp.controller('contactController', function($scope) {
-  $scope.message = 'Contact us! JK. This is just a demo.';
-});
-
-// HANDLES THE SIGN IN BUTTON IN LOGIN.HTML
-// heiferApp.controller('testMongo', function($scope, $http) {
-//     $scope.submit = function() {
-//         console.log($scope.email + ", " + $scope.passwd);
-//         $http.post('/save/', { Email : $scope.email }).then(function(response) {
-//             console.log("post to loginCheck was successful");
-//         }, function(error) {
-//             console.log("error at script.js: 41");
-//         });
-//             // success(function(data, status, headers, config) {
-//             //     // code
-//             //     console.log("post to loginCheck was successful");
-//             // }).
-//             // error(function(data, status, headers, config) {
-//             //     // code
-//             //     console.log("error at script.js: 44");
-//             // });
-//     };
-// });
-
 
   // should save login info to parse database
   heiferApp.controller('testMongo', function($scope) {
@@ -91,3 +57,47 @@ heiferApp.controller('contactController', function($scope) {
       // });
     };
   });
+
+    // configure our routes
+    heiferApp.config(function($routeProvider) {
+        $routeProvider
+
+            // route for the home page
+            .when('/', {
+                templateUrl : 'templates/login.html',
+                controller  : 'mainController'
+            })
+
+            // route for the about page
+            .when('/registration', {
+                templateUrl : 'templates/registration.html',
+                controller  : 'registrationController'
+            })
+
+             // route for the about page
+            .when('/feed', {
+                templateUrl : 'templates/feed.html',
+                controller  : 'feedController'
+            })
+    });
+
+    // create the controller and inject Angular's $scope
+    heiferApp.controller('mainController', function($scope) {
+        // create a message to display in our view
+        $scope.message = 'Everyone come and see how good I look!';
+    });
+
+    heiferApp.controller('aboutController', function($scope) {
+        $scope.message = 'Look! I am an about page.';
+    });
+        var m = {
+            "Test Title1": "2",
+            "Test Title2": "2",
+            "Test Title3": "3",
+            "Test Title4": "1",
+            "Test Title5": "3",
+            "Test Title6": "2"
+        };
+    heiferApp.controller('feedController', function($scope) {
+            $scope.items = m;
+    });
