@@ -54,7 +54,7 @@ h2, h3, h4 {
 
 #map-canvas {
   position: relative;
-  height: 100px;
+  height: 850px;
   width: 100%;
   margin: 0px;
   padding: 0px;
@@ -65,6 +65,8 @@ h2, h3, h4 {
 .item {
   background: white;
   margin-bottom: 1em;
+  height: 400px;
+  padding: 1em;
 }
 
 .item-body {
@@ -79,8 +81,8 @@ h2, h3, h4 {
 
 /**/
 
-.img-container { width: 160px; height: 160px; overflow: hidden; }
-.img-container img { max-width: 160px; }
+.img-container { margin: 0 auto; width: 300px; height: 200px; overflow: hidden; padding-top: 1em; }
+.img-container img { max-width: 450px; }
 
 .add-new {
   background-color: #8A3A30;
@@ -99,6 +101,15 @@ h2, h3, h4 {
 
 .btn-map {
   margin-top: -0.2em;
+}
+
+.sortable {
+  margin-bottom: 1em;
+  cursor: hand;
+}
+
+.sortable a {
+  cursor: pointer;
 }
 
   .form-signin {
