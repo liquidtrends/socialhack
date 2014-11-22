@@ -44,39 +44,39 @@
 
    <!-- Add New -->
    <div ng-show="addNew" class="well">
-      <form role="form">
+      <form  name="addPost" role="form" ng-submit="submit()" ng-controller="postController">
         <div class="form-group">
           <div class="col-md-6">
             <label for="keyword">Title</label>
-            <input type="text" class="form-control" id="title" placeholder="Your title">
+            <input type="text" class="form-control" id="title" ng-model="title" placeholder="Your title">
           </div>
           <div class="col-md-6">
             <label for="tags">Tags</label>
-            <input type="text" class="form-control" id="tags" placeholder="Ex: agriculture, sustainable">
+            <input type="text" class="form-control" id="tags" ng-model="tags" placeholder="Ex: agriculture, sustainable">
           </div>
         </div>
         <div class="form-group">
           <div class="col-md-12">
             <br />
            <label for="keyword">Post</label>
-           <textarea class="form-control" rows="5" id="post"></textarea>
+           <textarea class="form-control" rows="5" id="post" ng-model="content"></textarea>
             <br />
            <label for="keyword">Youtube Video</label>
-           <input type="text" class="form-control" id="expertise" placeholder="Ex: https://www.youtube.com/watch?v=WIKqgE4BwAY">
+           <input type="url" class="form-control" id="expertise" ng-model="youtube" placeholder="Ex: https://www.youtube.com/watch?v=WIKqgE4BwAY">
            <br />
            <label for="keyword">Image</label>
-           <input type="text" class="form-control" id="expertise" placeholder="">
+           <input type="file" file-model="myFile" class="form-control" id="expertise" ng-model="image" placeholder="">
            <br />
            <label for="keyword">File</label>
-           <input type="text" class="form-control" id="expertise" placeholder="">
+           <input type="file" class="form-control" id="expertise" ng-model="file" placeholder="">
             <br />
            </div>
-           <button type="submit" class="btn btn-default"><i class="fa fa-search"></i> Submit</button>
+           <button id="submitPost" type="submit" class="btn btn-default"><i class="fa fa-search"></i> Submit</button>
         </div>
      </form>
    </div>
 
-   <!-- Add New -->
+   <!-- The Feed -->
       <div ng-controller="feedController">
         <div class="col-md-4" ng-repeat="data in datas | filter:search | filter:myFilter">
             <div class="item">

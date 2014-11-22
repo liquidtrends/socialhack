@@ -1,6 +1,65 @@
 var heiferApp = angular.module('heiferHub', ['ngRoute']);
 Parse.initialize("VLocePH0LazVLJVwfucZBRmihvfPiIITR6is2EVD", "Ir6EOlcEXSPlsrpMbdhpapJaPvpFwAiQncwSmkC7");
 
+// $('#submitPost').click( function() {
+//     $.ajax({
+//         url: '/feed',
+//         type: 'post',
+//         dataType: 'json',
+//         data: $('form[name=addPost]').serialize(),
+//         success: function(data) {
+//                    console.log(data);
+//                  },
+//                  error: function(data, err) {
+//                     console.log(err);
+//                  }
+//     });
+// });
+
+
+
+heiferApp.controller('postController', function($scope) {
+
+
+    $scope.submit = function() {
+        var Post = Parse.Object.extend("Posts");
+        var posts = new Post();
+
+
+        // stupid way to get tags in a good array because forEach wasn't working
+        // also dealing with if no tags are input
+        if ($scope.tags == undefined) {
+            $scope.tags = "";
+        } else {
+            var tags = $scope.tags.split(",");
+            for (var i=0; i<tags.length; i++)
+                tags[i] = tags[i].trim();
+        }
+
+        console.log("Title", $scope.title);
+        console.log("PostTags", tags);
+        console.log("Content", $scope.content);
+        console.log("Youtube", $scope.youtube);
+        console.log("Pictures", $scope.image);
+        console.log("Files", $scope.file);
+
+        posts.set("Title", $scope.title);
+        posts.set("PostTags", tags);
+        posts.set("Content", $scope.content);
+        posts.set("Youtube", $scope.youtube);
+        // posts.set("Pictures", $scope.image);
+        // posts.set("Files", $scope.file);
+
+        posts.save(null, {
+            success: function(posts) {
+                console.log("\n\n\npost saved in\n\n\n");
+            },
+            error: function(posts, error) {
+                console.log("\n\n\nfailed to create new object\n\n\n");
+            }
+        });
+    };
+});
 
 
 // Angular Controller for Registration of new User
@@ -16,9 +75,11 @@ heiferApp.controller('registrationController', function($scope) {
         }
 
         // stupid way to get expertise in a good array because forEach wasn't working
-        var expertise = $scope.expertise.split(",");
-        for (var i=0; i<expertise.length; i++)
-            expertise[i] = expertise[i].trim();
+        if ($scope.expertise.trim().length) {
+            var expertise = $scope.expertise.split(",");
+            for (var i=0; i<expertise.length; i++)
+                expertise[i] = expertise[i].trim();
+        }
 
         user.set("Name", $scope.fullName);
         user.set("Password", $scope.passwd);
@@ -36,37 +97,11 @@ heiferApp.controller('registrationController', function($scope) {
             error: function(user, error) {
                 console.log("\n\n\nfailed to create new object\n\n\n");
             }
-        })
+        });
 
     };
 });
 
-
-
-  // // should save login info to parse database
-  // heiferApp.controller('testMongo', function($scope) {
-  //   $scope.submit = function() {
-  //     // function refreshParse() {
-  //     Parse.initialize("VLocePH0LazVLJVwfucZBRmihvfPiIITR6is2EVD", "Ir6EOlcEXSPlsrpMbdhpapJaPvpFwAiQncwSmkC7");
-
-  //     var Users = Parse.Object.extend("Users");
-  //     var user = new Users();
-
-  //     console.log("email: " + $scope.email);
-  //     console.log("passwd: " + $scope.passwd);
-  //     user.set("Email", $scope.email);
-  //     user.set("Password", $scope.passwd);
-
-  //     user.save(null, {
-  //       success: function(user) {
-  //         console.log("user was saved");
-  //       },
-  //       error: function(user, error) {
-  //         console.log("failed to create new object");
-  //       }
-  //     });
-  //   };
-  // });
 
     // configure our routes
     heiferApp.config(function($routeProvider) {
@@ -86,6 +121,7 @@ heiferApp.controller('registrationController', function($scope) {
 
              // route for the about page
             .when('/feed', {
+
                 templateUrl : 'templates/feed.html',
                 controller  : 'feedController'
             })
@@ -116,6 +152,13 @@ heiferApp.controller('registrationController', function($scope) {
                     // failures vs. success i check results.length here:
                     if (results.length > 0) {
                         location.href="/#/feed";
+                        // app.post('/', function(req, res) {
+                        //     if (req.session.logged) res.send('Welcome back!');
+                        //     else {
+                        //         req.session.logged = true;
+                        //         console.log('Welcome!');
+                        //     }
+                        // });
                     } else { console.log("jams failed"); }
                 },
                 error: function(error) {
@@ -128,6 +171,7 @@ heiferApp.controller('registrationController', function($scope) {
     heiferApp.controller('aboutController', function($scope) {
         $scope.message = 'Look! I am an about page.';
     });
+
 
     heiferApp.controller('feedController', function($scope) {
             $scope.datas = [ 
