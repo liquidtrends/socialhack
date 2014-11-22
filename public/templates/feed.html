@@ -78,7 +78,7 @@
 
    <!-- The Feed -->
       <div ng-controller="feedController">
-        <div class="col-md-4" ng-repeat="data in innerData | filter:search | filter:myFilter">
+        <div class="col-md-4" ng-repeat="data in newDatas | filter:search | filter:myFilter">
             <div class="item">
             <div>
               <div class="img-container">
@@ -88,7 +88,7 @@
             <div class="item-body">
               <h4>{{ data.title }}</h4>
               <p>{{ data.content.substring(0,120) + ((data.content.length > 120) ? "..." : "")}}</p>
-              <span class="user-container"><small><i class="fa fa-user"></i> {{ data.author }} | <i class="fa fa-map-marker"></i> {{ data.location }}</small></span>
+              <span class="user-container"><small><i class="fa fa-user"></i> {{ data.title }} | <i class="fa fa-map-marker"></i> {{ data.title }}</small></span>
             </div>
         </div>
       </div>

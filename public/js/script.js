@@ -181,17 +181,30 @@ heiferApp.controller('registrationController', function($scope) {
             success: function(results) {
                 console.log(results);
                 $scope.datas.push(results.map(function(e,i) {
-                    return { title: e.attributes.Title, content: e.attributes.Content };
+                    return {title: e.attributes.Title, content: e.attributes.Content};
                 }));
+                //crap code
                 console.log($scope.datas);
                 $scope.innerData = $scope.datas[0];
                 console.log("title: " + $scope.datas[0][0].content);
+                console.log("innerData: " + $scope.innerData);
+
+
+                $scope.rightData = [];
+                $scope.rightData.push($scope.innerData.map(function(e) {
+                    return e;
+                }));
+                // console.log("right data: " + $scope.rightData[1].title);
+                //
+
+                $scope.newDatas = [
+                    {title: $scope.datas[0][1].title, content: $scope.datas[0][1].content}
+                ];
             },
             error: function(error) {
                 console.log("error: " + error.code + " " + error.message);
             }
         });
-
 
             // $scope.datas = [ 
             // {title: "This is a test", content: "lorem ipsum", location: "Africa", author: "Todd Kronenburg", type: 2},
