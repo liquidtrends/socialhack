@@ -1,69 +1,67 @@
 <div class="container reg-con well">
     <div class="row">
-        <form role="form">
+        <form role="form" ng-submit="submit()" ng-controller="registrationController">
             <div class="col-lg-6">
                 <div class="well well-sm"><strong><span class="glyphicon glyphicon-asterisk"></span>Required Field</strong></div>
                 <div class="form-group">
                     <label for="InputName">Full Name</label>
                     <div class="input-group">
-                        <input type="text" class="form-control" name="InputName" id="InputName" placeholder="Enter Name" required>
+                        <input type="text" class="form-control" name="InputName" id="InputName" placeholder="Enter Name" ng-model="fullName" required>
                         <span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="InputEmail">Email</label>
                     <div class="input-group">
-                        <input type="email" class="form-control" id="InputEmailFirst" name="InputEmail" placeholder="Enter Email" required>
+                        <input type="email" class="form-control" id="InputEmailFirst" name="InputEmail" placeholder="Enter Email" ng-model="email" required>
                         <span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="inputPassword">Password</label>
                     <div class="input-group">
-                        <input type="password" class="form-control" id="InputPassword1" name="InputPassword2" placeholder="Password" required>
+                        <input type="password" class="form-control" id="InputPassword1" name="InputPassword2" placeholder="Password" ng-model="passwd" required>
                         <span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="inputPassword2">Confirm Password</label>
                     <div class="input-group">
-                        <input type="password" class="form-control" id="InputEmailFirst" name="InputPassword2" placeholder="Confirm Password" required>
+                        <input type="password" class="form-control" id="InputEmailFirst" name="InputPassword2" placeholder="Confirm Password" ng-model="confirmPasswd" required>
                         <span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="location">Location</label>
                     <div class="input-group">
-                        <input type="text" class="form-control" id="InputEmailFirst" name="location" placeholder="City, Country" required>
+                        <input type="text" class="form-control" id="InputEmailFirst" name="location" placeholder="City, Country" ng-model="cityCountry" required>
                         <span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="position">Position</label>
                     <div class="input-group">
-                        <input type="text" class="form-control" id="position" name="position" placeholder="Position" required>
+                        <input type="text" class="form-control" id="position" name="position" placeholder="Position" ng-model="position" required>
                         <span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="expertise">Expertise</label>
                     <div class="input-group">
-                        <input type="text" class="form-control" id="expertise" name="expertise" placeholder="Expertise" required>
+                        <input type="text" class="form-control" id="expertise" name="expertise" placeholder="Expertise1, Expertise2, ..." ng-model="expertise" required>
                         <span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="phoneNumber">Phone Number</label>
                     <div class="input-group">
-                        <input type="text" class="form-control" id="phone" name="phone" placeholder="Phone number" required>
+                        <input type="text" class="form-control" id="phone" name="phone" placeholder="Phone number" ng-model="phone" required>
                         <span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>
                     </div>
                 </div>
                 <div class="form-group">
-                  <label for="profileImage">Profile Image</label>
-                  <input multiple="multiple" name="upload" type="file" /><br><br><input type="submit" value="Upload" /></form>
                   <input type="submit" name="submit" id="submit" value="Submit" class="btn btn-info pull-right">
-                </div> 
+                </div>                        <br><br>
             </div>
         </form>
         <div class="col-lg-5 col-md-push-1">
