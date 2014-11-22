@@ -25,7 +25,7 @@ google.maps.event.addDomListener(window, 'load', initialize);
     // var myLatLng = new google.maps.LatLng(lat, lon);
     // Create the Map Options
     var mapOptions = {
-      zoom: 14,
+      zoom: 2,
       center: {lat: myLat, lng: myLong},
       mapTypeId: google.maps.MapTypeId.ROADMAP
       // disableDefaultUI: true
@@ -38,6 +38,12 @@ google.maps.event.addDomListener(window, 'load', initialize);
     var map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
   // Setting the heatmap layer onto the map (must come after the above line of code)
     // heatmap.setMap(map);
+var marker = new google.maps.Marker({
+      position: {lat: myLat, lng: myLong},
+      map: map,
+      title: 'Hello World!'
+  });
+
     return map;
   }
 });

@@ -73,16 +73,37 @@ h2, h3, h4 {
   padding: 1em;
 }
 
+.class1 {
+  border-top: 5px solid #E64642;
+}
+
+.class2 {
+  border-top: 5px solid #D09B0B;
+}
+
+.class3 {
+  border-top: 5px solid #12ADA1;
+}
+
+.class4 {
+  border-top: 5px solid #A47100;
+}
+
 .user-container {
   position: absolute;
   bottom: 1.5em;
   right: 2em;
 }
 
+.spinner {
+  margin-top: 4em;
+  font-size: 3em;
+}
+
 /**/
 
 .img-container { margin: 0 auto; width: 100%; height: 200px; overflow: hidden; padding-top: 1em; }
-.img-container img { max-width: 450px; }
+.img-container img { max-width: 400px; }
 
 .add-new {
   background-color: #8A3A30;
