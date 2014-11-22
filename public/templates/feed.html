@@ -78,7 +78,7 @@
 
    <!-- The Feed -->
       <div ng-controller="feedController">
-        <div class="col-md-4" ng-repeat="data in datas | filter:search | filter:myFilter">
+        <div class="col-md-4" ng-repeat="data in innerData | filter:search | filter:myFilter">
             <div class="item">
             <div>
               <div class="img-container">
