@@ -21,43 +21,27 @@
     </nav>
 
 <div class="container">
-<div class="col-md-3 well hidden-xs hidden-sm search-container">
-   <h2 class="text-center search-title">Search</h2>
-   <form role="form">
-      <div class="form-group">
-       <label for="keyword">Keyword</label>
+
+<div class="col-md-12 well">
+      <form role="form">
+      <div class="form-group col-md-4">
        <input ng-model="search" type="text" class="form-control" id="keyword" placeholder="Keywords">
       </div>
-<!--       <div class="form-group">
-       <label for="date">Date</label>
-       <input type="text" class="form-control" id="keyword" placeholder="Keywords">
-     </div> -->
-      <div class="form-group">
-         <label for="keyword">Location</label>
-         <input type="text" class="form-control" id="location" placeholder="City, Country">
-      </div>
-      <div class="form-group">
-         <label for="keyword">Expertise</label>
-         <input type="text" class="form-control" id="expertise" placeholder="Expertise">
-      </div>
-      <div class="form-group">
-         <label for="keyword">Member Name</label>
-         <input type="text" class="form-control" id="author" placeholder="Name">
-      </div>
-      <div class="form-group">
-         <label for="keyword">Project</label>
-         <input type="text" class="form-control" id="project" placeholder="Project">
-      </div>
-        
-      <button type="submit" class="btn btn-default"><i class="fa fa-search"></i> Search</button>
    </form>
+    <span class="pull-right">
+    <a href ng-click="addNew = !addNew"><button type="button" class="btn btn-info btn-map add-new"><i class="fa fa-plus-square"></i> Add New</button></a>
+   <a href="/#/map-search"><button type="button" class="btn btn-info btn-map"><i class="fa fa-globe"></i> Map View</button></a>
+   </span>
 </div>
 
-<div class="col-md-9">
-   <div class="well">
-    <a href ng-click="addNew = !addNew"><button type="button" class="btn btn-info btn-map add-new"><i class="fa fa-plus-square"></i> Add New</button></a>
-   <a href="/#/map-search"><button type="button" class="btn btn-info pull-right btn-map"><i class="fa fa-globe"></i> Map View</button></a>
-   </div>
+<div class="sortable">Sort:
+<span ng-click="myFilter = {type: all}"><a>All</a></span> |
+<span ng-click="myFilter = {type: 1}"><a>Videos</a></span> | 
+<span ng-click="myFilter = {type: 2}"><a>Files</a></span> |
+<span ng-click="myFilter = {type: 3}"><a>Stories</a></span> |
+<span ng-click="myFilter = {type: 4}"><a>Photos</a></span>
+</div>
+
    <!-- Add New -->
    <div ng-show="addNew" class="well">
       <form role="form">
@@ -94,16 +78,16 @@
 
    <!-- Add New -->
       <div ng-controller="feedController">
-        <div class="col-md-12" ng-repeat="data in datas | filter:search">
-            <div class="media item">
-            <div class="media-left">
+        <div class="col-md-4" ng-repeat="data in datas | filter:search | filter:myFilter">
+            <div class="item">
+            <div>
               <div class="img-container">
                 <img src="http://placehold.it/300x300">
               </div>
             </div>
-            <div class="media-body item-body">
+            <div class="item-body">
               <h4>{{ data.title }}</h4>
-              <p>{{ data.content.substring(0,250) + ((data.content.length > 250) ? "..." : "")}}</p>
+              <p>{{ data.content.substring(0,120) + ((data.content.length > 120) ? "..." : "")}}</p>
               <span class="user-container"><small><i class="fa fa-user"></i> {{ data.author }} | <i class="fa fa-map-marker"></i> {{ data.location }}</small></span>
             </div>
         </div>

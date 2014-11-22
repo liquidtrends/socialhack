@@ -131,8 +131,9 @@ heiferApp.controller('registrationController', function($scope) {
 
     heiferApp.controller('feedController', function($scope) {
             $scope.datas = [ 
-            {title: "This is a test", content: "lorem ipsum", location: "Africa", author: "Todd Kronenburg"},
-            {title: "This is a test 2", content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In mi neque, malesuada eget dolor vitae, fermentum varius ante. Ut vehicula libero mattis faucibus pulvinar. Nam ultrices varius magna vitae sodales. Proin eget vulputate metus, ac ullamcorper nibh. Quisque nec purus ac erat imperdiet viverra quis eu risus. Suspendisse efficitur cursus eros a vulputate. Cras eu hendrerit mi. Aliquam viverra, neque vitae volutpat vehicula, erat risus rhoncus nulla, ut suscipit sapien elit et massa.", location: "USA", author: "Ryan Janvier"}
+            {title: "This is a test", content: "lorem ipsum", location: "Africa", author: "Todd Kronenburg", type: 2},
+            {title: "This is a test 2", content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In mi neque, malesuada eget dolor vitae, fermentum varius ante. Ut vehicula libero mattis faucibus pulvinar. Nam ultrices varius magna vitae sodales. Proin eget vulputate metus, ac ullamcorper nibh. Quisque nec purus ac erat imperdiet viverra quis eu risus. Suspendisse efficitur cursus eros a vulputate. Cras eu hendrerit mi. Aliquam viverra, neque vitae volutpat vehicula, erat risus rhoncus nulla, ut suscipit sapien elit et massa.", location: "USA", author: "Ryan Janvier", type: 1},
+            {title: "Elizabeth's Textile Business in Peru", content: "lorem ipsum", location: "Africa", author: "Todd Kronenburg", type: 2},
 
 
             ];
