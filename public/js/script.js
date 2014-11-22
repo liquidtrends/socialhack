@@ -79,6 +79,12 @@ heiferApp.config(function($routeProvider) {
                 templateUrl : 'templates/feed.html',
                 controller  : 'feedController'
             })
+
+            // route for the about page
+            .when('/map-search', {
+                templateUrl : 'templates/map-search.html',
+                controller  : 'mapSearchController'
+            })
     });
 
     // create the controller and inject Angular's $scope

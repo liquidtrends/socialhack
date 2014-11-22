@@ -7,6 +7,14 @@ a {
   font-family: 'Roboto Condensed', sans-serif;
 }
 
+.white {
+  color: white;
+}
+
+.white:hover {
+  color: black;
+}
+
 h2 {
   color: #362B25;
   font-family: 'Roboto Condensed', sans-serif;
@@ -51,22 +59,10 @@ h2 {
   color: #D09B0B;
 }
 
-  .btn 
-  {
-   outline:0;
-   border:none;
-   border-top:none;
-   border-bottom:none;
-   border-left:none;
-   border-right:none;
-   box-shadow:inset 2px -3px rgba(0,0,0,0.15);
-  }
-  .btn:focus
-  {
-   outline:0;
-   -webkit-outline:0;
-   -moz-outline:0;
-  }
+.btn-map {
+  margin-top: -0.5em;
+}
+
   .form-signin {
     max-width: 280px;
     padding: 15px;
@@ -118,13 +114,11 @@ h2 {
 .btn-primary {
    color: #fff;
    background-color: #12ADA1;
-   border-color: white;
+   border-color: none;
 }
 
 .btn-primary:hover {
-   color: #fff;
    background-color: #0e847a;
-   border-color: white;
 }
 
 /* Registration */ 
