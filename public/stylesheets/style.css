@@ -1,10 +1,14 @@
 body {
    background-color: #F0ECE1;
-   padding: 2em;
 }
 
 a {
-  color: #00B7FF;
+  color: #12ADA1;
+  font-family: 'Roboto Condensed', sans-serif;
+}
+
+h2 {
+  color: #362B25;
   font-family: 'Roboto Condensed', sans-serif;
 }
 
@@ -22,8 +26,29 @@ a {
    left: 0;
 }
 
+.wordmark {
+  height: 1.4em;
+  width: auto;
+}
+
 .logo {
    max-width: 22em;
+}
+
+.item {
+  background: white;
+  padding: 1.2em;
+  margin-bottom: 1em;
+}
+
+.add-icon {
+  font-size: 6em;
+  margin: 0.3em;
+  color: #12ADA1;
+}
+
+.add-icon:hover {
+  color: #D09B0B;
 }
 
   .btn 
@@ -107,3 +132,4 @@ a {
 .reg-con {
    margin-top: 2.5em;
 }
+

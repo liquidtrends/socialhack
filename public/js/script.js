@@ -15,6 +15,12 @@ var heiferApp = angular.module('heiferHub', ['ngRoute']);
                 templateUrl : 'templates/registration.html',
                 controller  : 'registrationController'
             })
+
+             // route for the about page
+            .when('/feed', {
+                templateUrl : 'templates/feed.html',
+                controller  : 'feedController'
+            })
     });
 
     // create the controller and inject Angular's $scope
@@ -26,7 +32,14 @@ var heiferApp = angular.module('heiferHub', ['ngRoute']);
     heiferApp.controller('aboutController', function($scope) {
         $scope.message = 'Look! I am an about page.';
     });
-
-    heiferApp.controller('contactController', function($scope) {
-        $scope.message = 'Contact us! JK. This is just a demo.';
+        var m = {
+            "Test Title1": "2",
+            "Test Title2": "2",
+            "Test Title3": "3",
+            "Test Title4": "1",
+            "Test Title5": "3",
+            "Test Title6": "2"
+        };
+    heiferApp.controller('feedController', function($scope) {
+            $scope.items = m;
     });
