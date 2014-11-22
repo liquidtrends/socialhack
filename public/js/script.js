@@ -83,7 +83,7 @@ heiferApp.config(function($routeProvider) {
             // route for the about page
             .when('/map-search', {
                 templateUrl : 'templates/map-search.html',
-                controller  : 'mapSearchController'
+                // controller  : 'mapSearchController'
             })
     });
 
@@ -99,10 +99,10 @@ heiferApp.config(function($routeProvider) {
         var m = {
             "Test Title1": "2",
             "Test Title2": "2",
-            "Test Title3": "3",
+            "Test Title3 super long annoying title that is here": "3",
             "Test Title4": "1",
             "Test Title5": "3",
-            "Test Title6": "2"
+            "Test Title6 really long and annoying for testing": "2"
         };
     heiferApp.controller('feedController', function($scope) {
             $scope.items = m;

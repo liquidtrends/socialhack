@@ -18,6 +18,7 @@ a {
 h2 {
   color: #362B25;
   font-family: 'Roboto Condensed', sans-serif;
+  margin-top: 0;
 }
 
 .full-bg {
@@ -43,10 +44,36 @@ h2 {
    max-width: 22em;
 }
 
+.search-container {
+  background: #d1c19a;
+}
+
+.search-title {
+  margin-top: 0;
+}
+
+#map-canvas {
+  height: 100%;
+  width: 100%;
+  margin: 0px;
+  padding: 0px
+}
+
 .item {
   background: white;
-  padding: 1.2em;
   margin-bottom: 1em;
+}
+
+.item-body {
+  padding: 1em;
+}
+
+.img-container { width: 160px; height: 160px; overflow: hidden; }
+.img-container img { max-width: 160px; }
+
+.add-new {
+  background-color: #8A3A30;
+  border: none;
 }
 
 .add-icon {
@@ -60,7 +87,7 @@ h2 {
 }
 
 .btn-map {
-  margin-top: -0.5em;
+  margin-top: -0.2em;
 }
 
   .form-signin {
@@ -126,4 +153,8 @@ h2 {
 .reg-con {
    margin-top: 2.5em;
 }
+
+
+
+
 
