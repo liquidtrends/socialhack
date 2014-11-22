@@ -26,7 +26,7 @@
    <form role="form">
       <div class="form-group">
        <label for="keyword">Keyword</label>
-       <input type="text" class="form-control" id="keyword" placeholder="Keywords">
+       <input ng-model="search" type="text" class="form-control" id="keyword" placeholder="Keywords">
       </div>
 <!--       <div class="form-group">
        <label for="date">Date</label>
@@ -41,7 +41,7 @@
          <input type="text" class="form-control" id="expertise" placeholder="Expertise">
       </div>
       <div class="form-group">
-         <label for="keyword">Name</label>
+         <label for="keyword">Member Name</label>
          <input type="text" class="form-control" id="author" placeholder="Name">
       </div>
       <div class="form-group">
@@ -56,7 +56,7 @@
 <div class="col-md-9">
    <div class="well">
     <a href ng-click="addNew = !addNew"><button type="button" class="btn btn-info btn-map add-new"><i class="fa fa-plus-square"></i> Add New</button></a>
-   <a href="/#/map-search"><button type="button" class="btn btn-info pull-right btn-map"><i class="fa fa-map-marker"></i> Map View</button></a>
+   <a href="/#/map-search"><button type="button" class="btn btn-info pull-right btn-map"><i class="fa fa-globe"></i> Map View</button></a>
    </div>
    <!-- Add New -->
    <div ng-show="addNew" class="well">
@@ -93,8 +93,8 @@
    </div>
 
    <!-- Add New -->
-      <div ng-app ng-controller="feedController">
-        <div class="col-md-12" ng-repeat="(country,goals) in items">
+      <div ng-controller="feedController">
+        <div class="col-md-12" ng-repeat="data in datas | filter:search">
             <div class="media item">
             <div class="media-left">
               <div class="img-container">
@@ -102,7 +102,9 @@
               </div>
             </div>
             <div class="media-body item-body">
-              <h2>{{country}}</h2> <p>{{goals}}</p>
+              <h4>{{ data.title }}</h4>
+              <p>{{ data.content.substring(0,250) + ((data.content.length > 250) ? "..." : "")}}</p>
+              <span class="user-container"><small><i class="fa fa-user"></i> {{ data.author }} | <i class="fa fa-map-marker"></i> {{ data.location }}</small></span>
             </div>
         </div>
       </div>
