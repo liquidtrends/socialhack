@@ -174,6 +174,13 @@ heiferApp.controller('registrationController', function($scope) {
 
 
     heiferApp.controller('feedController', function($scope) {
+            $scope.datas = [ 
+            {img: "img/nepal-farmer.jpg", title: "Celebrating Ropai and Farmers in Nepal", content: "lorem ipsum", location: "Nepal", author: "Todd Kronenburg", type: 3},
+            {img: "img/6391231797_2d9707cd5d_b.jpg", title: "Matthew Robert Lee - Farmer Profile:", content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In mi neque, malesuada eget dolor vitae, fermentum varius ante. Ut vehicula libero mattis faucibus pulvinar. Nam ultrices varius magna vitae sodales. Proin eget vulputate metus, ac ullamcorper nibh. Quisque nec purus ac erat imperdiet viverra quis eu risus. Suspendisse efficitur cursus eros a vulputate. Cras eu hendrerit mi. Aliquam viverra, neque vitae volutpat vehicula, erat risus rhoncus nulla, ut suscipit sapien elit et massa.", location: "USA", author: "Ryan Janvier", type: 1},
+            {img: "img/textile.png", title: "Elizabeth's Textile Business in Peru", content: "http://www.youtube.com/embed/GohqIUxgRx0?list=PLDpCJPATo8NQeYbxadqpf6cAArGgcBJSO", location: "Africa", author: "Todd Kronenburg", type: 1},
+                        {title: "This is a test", content: "lorem ipsum", location: "Africa", author: "Todd Kronenburg", type: 2},
+            {img: "img/llama.jpg", title: "LLama Project Transforms Lives in Bolivia", content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In mi neque, malesuada eget dolor vitae, fermentum varius ante. Ut vehicula libero mattis faucibus pulvinar. Nam ultrices varius magna vitae sodales. Proin eget vulputate metus, ac ullamcorper nibh. Quisque nec purus ac erat imperdiet viverra quis eu risus. Suspendisse efficitur cursus eros a vulputate. Cras eu hendrerit mi. Aliquam viverra, neque vitae volutpat vehicula, erat risus rhoncus nulla, ut suscipit sapien elit et massa.", location: "New Zealand", author: "John Doe", type: 4},
+            {title: "Elizabeth's Textile Business in Peru", content: "http://www.youtube.com/embed/GohqIUxgRx0?list=PLDpCJPATo8NQeYbxadqpf6cAArGgcBJSO", location: "Africa", author: "Todd Kronenburg", type: 3},
         $scope.datas = [];
         var Posts = Parse.Object.extend("Posts");
         var query = new Parse.Query(Posts);

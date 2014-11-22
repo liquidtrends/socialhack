@@ -14,7 +14,7 @@
           <ul class="nav navbar-nav navbar-right">
             <li><a href="../navbar/"><i class="fa fa-user"></i> Profile</a></li>
             <li><a href="../navbar-static-top/"><i class="fa fa-bookmark"></i> Library</a></li>
-            <li><a href="../navbar-static-top/"><i class="fa fa-power-off"></i> Logout</a></li>
+            <li><a href="/#/"><i class="fa fa-power-off"></i> Logout</a></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
@@ -25,7 +25,7 @@
 <div class="col-md-12 well">
       <form role="form">
       <div class="form-group col-md-4">
-       <input ng-model="search" type="text" class="form-control" id="keyword" placeholder="Keywords">
+       <input ng-model="search" type="text" class="form-control" id="keyword" placeholder="SEARCH">
       </div>
    </form>
     <span class="pull-right">
@@ -78,17 +78,17 @@
 
    <!-- The Feed -->
       <div ng-controller="feedController">
-        <div class="col-md-4" ng-repeat="data in newDatas | filter:search | filter:myFilter">
-            <div class="item">
+        <div class="col-md-4 col-sm-6 col-lg-4" ng-repeat="data in datas | filter:search | filter:myFilter">
+            <div class="item class{{ data.type }}">
             <div>
               <div class="img-container">
-                <img src="http://placehold.it/300x300">
+                <img src="{{ data.img }}">
               </div>
             </div>
             <div class="item-body">
               <h4>{{ data.title }}</h4>
-              <p>{{ data.content.substring(0,120) + ((data.content.length > 120) ? "..." : "")}}</p>
-              <span class="user-container"><small><i class="fa fa-user"></i> {{ data.title }} | <i class="fa fa-map-marker"></i> {{ data.title }}</small></span>
+              <p>{{ data.content.substring(0,130) + ((data.content.length > 130) ? "..." : "")}}</p>
+              <span class="user-container"><small><i class="fa fa-user"></i> {{ data.author }} | <i class="fa fa-map-marker"></i> {{ data.location }}</small></span>
             </div>
         </div>
       </div>
