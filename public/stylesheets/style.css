@@ -15,7 +15,7 @@ a {
   color: black;
 }
 
-h2 {
+h2, h3, h4 {
   color: #362B25;
   font-family: 'Roboto Condensed', sans-serif;
   margin-top: 0;
@@ -59,6 +59,8 @@ h2 {
   padding: 0px
 }
 
+/* Search Items */
+
 .item {
   background: white;
   margin-bottom: 1em;
@@ -67,6 +69,14 @@ h2 {
 .item-body {
   padding: 1em;
 }
+
+.user-container {
+  position: absolute;
+  bottom: 1.5em;
+  right: 2em;
+}
+
+/**/
 
 .img-container { width: 160px; height: 160px; overflow: hidden; }
 .img-container img { max-width: 160px; }
