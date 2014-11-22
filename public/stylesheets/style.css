@@ -1,16 +1,25 @@
 body {
-   background: url('../img/bg01.jpg') no-repeat center center fixed;
-   -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-   /*background-color: #EEE8D6;*/
-   padding: 50px;
+   background-color: #EEE8D6;*/
+   padding: 2em;
 }
 
 a {
   color: #00B7FF;
   font-family: 'Roboto Condensed', sans-serif;
+}
+
+.full-bg {
+   background: url('../img/bg01.jpg') no-repeat center center fixed;
+   -webkit-background-size: cover;
+   -moz-background-size: cover;
+   -o-background-size: cover;
+   background-size: cover;
+   width: 100%;
+   height: 100%;
+   z-index: -1;
+   position: absolute;
+   top: 0;
+   left: 0;
 }
 
 .logo {
@@ -91,4 +100,10 @@ a {
    color: #fff;
    background-color: #0e847a;
    border-color: white;
+}
+
+/* Registration */ 
+
+.reg-con {
+   margin-top: 2.5em;
 }
